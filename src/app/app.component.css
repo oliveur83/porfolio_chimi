@@ -1,0 +1,22 @@
+#container {
+  margin: 0;
+  padding:0;
+  width: 100%;
+  min-height: 100vh; /* Pour couvrir toute la hauteur de la fenêtre visible */
+  background-color: rgb(196, 228, 244);
+}
+  body {
+    background-color: rgb(196, 228, 244);
+    height: 100%;
+    padding:0;
+    margin: 0; /* Pour enlever la marge par défaut du body */
+  }
+  
+  html {
+    background-color: rgb(196, 228, 244);
+    height: 100%;
+    padding:0;
+    margin: 0; /* Pour enlever la marge par défaut du body */
+  }
+
+  h1{font-size: 70px;}
