@@ -3,16 +3,14 @@ import * as THREE from 'three';
 export class Sol extends THREE.Group {
     constructor() {
         super();
-
-        // Matériaux
-        const tableMaterial = new THREE.MeshBasicMaterial({ color: 0x000 }); // Gris clair
-        const tableMaterialmur = new THREE.MeshBasicMaterial({ color:0x00008B }); // Gris clair
-
-        // Création de la table
+        const tableMaterial = new THREE.MeshBasicMaterial({ color: 0x000 }); 
+        const tableMaterialmur = new THREE.MeshBasicMaterial({ color:0x00008B }); 
         const tableTopGeometry = new THREE.BoxGeometry(30, 0.2, 30);
         const tableTop = new THREE.Mesh(tableTopGeometry, tableMaterial);
-        tableTop.position.y = 1; // Positionnez le haut de la table à une hauteur appropriée
+        tableTop.position.y = 1; 
+        tableTop.name="toto2"
         this.add(tableTop);
+
         this.translateY(-1) 
         
         const tableleft = new THREE.Mesh(tableTopGeometry, tableMaterialmur);
@@ -23,6 +21,8 @@ export class Sol extends THREE.Group {
        tablelright.rotateZ(Math.PI/2)
        tablelright.translateY(-15) 
        tablelright.translateX(15)
+       tableleft.name="toto1"
+       tablelright.name="toto3"
         this.add(tableleft);
        this.add(tablelright);
         

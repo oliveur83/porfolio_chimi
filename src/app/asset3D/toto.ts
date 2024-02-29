@@ -34,46 +34,15 @@ export class logo {
     const table = new Table();
     scene.add(table);
     const micro = new Micro();
-    micro.position.set(0, 5, 0);
-    micro.name = 'toto'; // Supposons que sol est une classe qui crée le modèle 3D
-    scene.add(micro);
-
+    micro.position.set(0, 5, 0); // Supposons que sol est une classe qui crée le modèle 3D
+    table.add(micro);
+    document.addEventListener('click', toto);
     const tube = new Tube(); // Supposons que Tube est une classe qui crée le modèle 3D
     tube.position.set(5, 9, 0); // Supposons que sol est une classe qui crée le modèle 3D
     table.add(tube);
-    const tab = new Tableau();
-    tab.name = 'tata'; // Supposons que sol est une classe qui crée le modèle 3D
+    const tab = new Tableau(); // Supposons que sol est une classe qui crée le modèle 3D
     tab.position.set(14, 14, -10); // Supposons que sol est une classe qui crée le modèle 3D
     table.add(tab);
-    // Créer un raycaster
-    var raycaster = new THREE.Raycaster();
-
-    // Créer un vecteur pour stocker la position du clic de la souris
-    var mouse = new THREE.Vector2();
-
-    // Fonction pour gérer le clic de la souris
-    function onMouseClick(event: { clientX: number; clientY: number }) {
-      // Mettre à jour les coordonnées de la souris en fonction de la position du clic
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-      raycaster.setFromCamera(mouse, camera);
-
-      var intersects = raycaster.intersectObjects(scene.children, true);
-
-      if (
-        intersects.length > 0 &&
-        intersects[0].object.parent?.name == micro.name
-      ) {
-        toto();
-      } else if (
-        intersects.length > 0 &&
-        intersects[0].object.parent?.name == tab.name
-      ) {
-        tata();
-      }
-    }
-    window.addEventListener('click', onMouseClick, false);
 
     //-------------------------------------
     // Création du rendu
@@ -105,41 +74,20 @@ export class logo {
             z: targetPosition.z,
           },
           500
-        )
+        ) // Animez la caméra vers la position cible avec un décalage z pour qu'elle ne soit pas juste devant l'objet
         .easing(TWEEN.Easing.Quadratic.Out)
         .onComplete(() => {
           const nouvelleScene = creerSceneAtome();
           scene.clear();
           scene.add(nouvelleScene);
           scene = nouvelleScene;
-          camera.position.x = -10;
+          camera.position.x=-10
         });
       cameraTarget.chain(nextAnimation);
 
-      cameraTarget.start();
-    }
-    function tata() {
-      const targetPosition = micro.position.clone();
-      const cameraTarget = new TWEEN.Tween(camera.position)
-        .to(
-          {
-            x: targetPosition.x,
-            y: targetPosition.y + 5,
-            z: targetPosition.z,
-          },
-          1000
-        ) // Animez la caméra vers la position cible avec un décalage z pour qu'elle ne soit pas juste devant l'objet
-        .easing(TWEEN.Easing.Quadratic.Out)
-
-        .onUpdate(() => {
-          camera.lookAt(20, 5, 0);
-        })
-        .onComplete(() => {
-          table.remove(tube);
-        });
-
       // Démarrer la première animation
       cameraTarget.start();
+      
     }
     function animate() {
       requestAnimationFrame(animate);
@@ -148,39 +96,62 @@ export class logo {
       renderer.render(scene, camera);
     }
     animate();
+    // Gestionnaire d'événements pour le début du clic de la souris
     document.addEventListener('mousedown', (event) => {
       this.mouseDown = true;
       this.mouseX = event.clientX;
       this.mouseY = event.clientY;
     });
 
-   
+    // Gestionnaire d'événements pour la fin du clic de la souris
     document.addEventListener('mouseup', () => {
       this.mouseDown = false;
     });
 
+    // Gestionnaire d'événements pour le mouvement de la souris
     document.addEventListener('mousemove', (event) => {
       if (this.mouseDown) {
         const deltaX = event.clientX - this.mouseX;
         const deltaY = event.clientY - this.mouseY;
 
+        // Ajuster la rotation de la scène en fonction du déplacement de la souris
         scene.rotation.y += deltaX * 0.01;
         scene.rotation.x += deltaY * 0.01;
- this.mouseX = event.clientX;
+
+        // Mettre à jour les coordonnées de la souris pour le prochain mouvement
+        this.mouseX = event.clientX;
         this.mouseY = event.clientY;
       }
     });
+    // Gestionnaire d'événements pour la molette de la souris
     document.addEventListener('wheel', (event) => {
+      // Si la molette est tournée vers le haut, avancez la caméra
       if (event.deltaY < 0) {
         camera.position.z += 0.5;
         camera.position.y -= 0.5;
-        camera.position.x += 0.5; 
+        camera.position.x += 0.5; // ajustez la valeur selon votre préférence
       }
-    else if (event.deltaY > 0) {
+      // Si la molette est tournée vers le bas, reculez la caméra
+      else if (event.deltaY > 0) {
         camera.position.z -= 0.5;
         camera.position.x -= 0.5;
-        camera.position.y += 0.5; 
+        camera.position.y += 0.5; // ajustez la valeur selon votre préférence
       }
     });
+
+    const materialX = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Rouge pour l'axe x
+    const materialY = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Vert pour l'axe y
+    const materialZ = new THREE.MeshBasicMaterial({ color: 0x0000ff }); // Bleu pour l'axe z
+    const geometryX = new THREE.CylinderGeometry(0.1, 0.1, 100, 32); // Axe x
+    const geometryY = new THREE.CylinderGeometry(0.1, 0.1, 100, 32); // Axe y
+    const geometryZ = new THREE.CylinderGeometry(0.1, 0.1, 100, 32); // Axe z
+    const axeX = new THREE.Mesh(geometryX, materialX);
+    const axeY = new THREE.Mesh(geometryY, materialY);
+    const axeZ = new THREE.Mesh(geometryZ, materialZ);
+    axeX.rotation.z = Math.PI / 2; // Rotation de 90 degrés autour de l'axe z pour l'axe x
+    axeY.rotation.x = -Math.PI / 2; // Rotation de -90 degrés autour de l'axe x pour l'axe y
+    scene.add(axeX);
+    scene.add(axeY);
+    scene.add(axeZ);
   }
 }
