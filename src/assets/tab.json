@@ -1,0 +1,475 @@
+{
+    "H": {
+      "Element": "Hydrogène",
+      "Compétence": "Habiletés en sécurité"
+    },
+    "He": {
+      "Element": "Hélium",
+      "Compétence": "Habiletés en sécurité"
+    },
+    "Li": {
+      "Element": "Lithium",
+      "Compétence": "Leadership"
+    },
+    "Be": {
+      "Element": "Béryllium",
+      "Compétence": "Bonnes pratiques de laboratoire"
+    },
+    "B": {
+      "Element": "Bore",
+      "Compétence": "Bonne gestion du temps"
+    },
+    "C": {
+      "Element": "Carbone",
+      "Compétence": "Créativité"
+    },
+    "N": {
+      "Element": "Azote",
+      "Compétence": "Nomenclature"
+    },
+    "O": {
+      "Element": "Oxygène",
+      "Compétence": "Observation"
+    },
+    "F": {
+      "Element": "Fluor",
+      "Compétence": "Communication visuelle"
+    },
+    "Ne": {
+      "Element": "Néon",
+      "Compétence": "Négociation"
+    },
+    "Na": {
+      "Element": "Sodium",
+      "Compétence": "Sécurité des produits chimiques"
+    },
+    "Mg": {
+      "Element": "Magnésium",
+      "Compétence": "Manipulation d'équipement"
+    },
+    "Al": {
+      "Element": "Aluminium",
+      "Compétence": "Adaptabilité"
+    },
+    "Si": {
+      "Element": "Silicium",
+      "Compétence": "Sens des responsabilités"
+    },
+    "P": {
+      "Element": "Phosphore",
+      "Compétence": "Planification expérimentale"
+    },
+    "S": {
+      "Element": "Soufre",
+      "Compétence": "Sensibilité"
+    },
+    "Cl": {
+      "Element": "Chlore",
+      "Compétence": "Collaboration"
+    },
+    "Ar": {
+      "Element": "Argon",
+      "Compétence": "Analyse des données"
+    },
+    "K": {
+      "Element": "Potassium",
+      "Compétence": "Créativité"
+    },
+    "Ca": {
+      "Element": "Calcium",
+      "Compétence": "Communication orale"
+    },
+    "Sc": {
+      "Element": "Scandium",
+      "Compétence": "Sensibilisation environnementale"
+    },
+    "Ti": {
+      "Element": "Titane",
+      "Compétence": "Traitement de données"
+    },
+    "V": {
+      "Element": "Vanadium",
+      "Compétence": "Vision stratégique"
+    },
+    "Cr": {
+      "Element": "Chrome",
+      "Compétence": "Conception expérimentale"
+    },
+    "Mn": {
+      "Element": "Manganèse",
+      "Compétence": "Modélisation"
+    },
+    "Fe": {
+      "Element": "Fer",
+      "Compétence": "Flexibilité"
+    },
+    "Co": {
+      "Element": "Cobalt",
+      "Compétence": "Coordination"
+    },
+    "Ni": {
+      "Element": "Nickel",
+      "Compétence": "Négociation"
+    },
+    "Cu": {
+      "Element": "Cuivre",
+      "Compétence": "Communication"
+    },
+    "Zn": {
+      "Element": "Zinc",
+      "Compétence": "Zèle"
+    },
+    "Ga": {
+      "Element": "Gallium",
+      "Compétence": "Gestion des risques"
+    },
+    "Ge": {
+      "Element": "Germanium",
+      "Compétence": "Gestion des ressources"
+    },
+    "As": {
+      "Element": "Arsenic",
+      "Compétence": "Analyse des risques"
+    },
+    "Se": {
+      "Element": "Sélénium",
+      "Compétence": "Sens de l'innovation"
+    },
+    "Br": {
+      "Element": "Brome",
+      "Compétence": "Bonnes pratiques de laboratoire"
+    },
+    "Kr": {
+      "Element": "Krypton",
+      "Compétence": "Connaissance des normes de sécurité"
+    },
+    "Rb": {
+      "Element": "Rubidium",
+      "Compétence": "Résolution de problèmes"
+    },
+    "Sr": {
+      "Element": "Strontium",
+      "Compétence": "Savoir-faire technique"
+    },
+    "Y": {
+      "Element": "Yttrium",
+      "Compétence": "Y... (cherchez de nouvelles compétences !)"
+    },
+    "Zr": {
+      "Element": "Zirconium",
+      "Compétence": "Zèle"
+    },
+    "Nb": {
+      "Element": "Niobium",
+      "Compétence": "Négociation"
+    },
+    "Mo": {
+      "Element": "Molybdène",
+      "Compétence": "Maîtrise technique"
+    },
+    "Tc": {
+      "Element": "Technétium",
+      "Compétence": "Traitement de données"
+    },
+    "Ru": {
+      "Element": "Ruthénium",
+      "Compétence": "Résolution de problèmes"
+    },
+    "Rh": {
+      "Element": "Rhodium",
+      "Compétence": "Rigueur scientifique"
+    },
+    "Pd": {
+      "Element": "Palladium",
+      "Compétence": "Pédagogie"
+    },
+    "Ag": {
+      "Element": "Argent",
+      "Compétence": "Analyse des données"
+    },
+    "Cd": {
+      "Element": "Cadmium",
+      "Compétence": "Contrôle qualité"
+    },
+    "In": {
+      "Element": "Indium",
+      "Compétence": "Intégrité"
+    },
+    "Sn": {
+      "Element": "Étain",
+      "Compétence": "Sensibilisation à la sécurité"
+    },
+    "Sb": {
+      "Element": "Antimoine",
+      "Compétence": "Savoir-faire technique"
+    },
+    "Te": {
+      "Element": "Tellure",
+      "Compétence": "Technicité"
+    },
+    "I": {
+      "Element": "Iode",
+      "Compétence": "Innovation"
+    },
+    "Xe": {
+      "Element": "Xénon",
+      "Compétence": "X... (cherchez de nouvelles compétences !)"
+    },
+    "Cs": {
+      "Element": "Césium",
+      "Compétence": "Créativité"
+    },
+    "Ba": {
+      "Element": "Baryum",
+      "Compétence": "Bonne gestion du temps"
+    },
+    "La": {
+      "Element": "Lanthane",
+      "Compétence": "Leadership"
+    },
+    "Ce": {
+      "Element": "Cérium",
+      "Compétence": "Conscience environnementale"
+    },
+    "Pr": {
+      "Element": "Praséodyme",
+      "Compétence": "Planification"
+    },
+    "Nd": {
+      "Element": "Néodyme",
+      "Compétence": "Négociation"
+    },
+    "Pm": {
+      "Element": "Prométhium",
+      "Compétence": "Maîtrise technique"
+    },
+    "Sm": {
+      "Element": "Samarium",
+      "Compétence": "Sens de l'innovation"
+    },
+    "Eu": {
+      "Element": "Europium",
+      "Compétence": "Éducation"
+    },
+    "Gd": {
+      "Element": "Gadolinium",
+      "Compétence": "Gestion des équipes"
+    },
+    "Tb": {
+      "Element": "Terbium",
+      "Compétence": "Traitement de données"
+    },
+    "Dy": {
+      "Element": "Dysprosium",
+      "Compétence": "Détermination"
+    },
+    "Ho": {
+      "Element": "Holmium",
+      "Compétence": "Habiletés en sécurité"
+    },
+    "Er": {
+      "Element": "Erbium",
+      "Compétence": "Encadrement"
+    },
+    "Tm": {
+      "Element": "Thulium",
+      "Compétence": "Technicité"
+    },
+    "Yb": {
+      "Element": "Ytterbium",
+      "Compétence": "Y... (cherchez de nouvelles compétences !)"
+    },
+    "Lu": {
+      "Element": "Lutétium",
+      "Compétence": "Leadership"
+    },
+    "Hf": {
+      "Element": "Hafnium",
+      "Compétence": "Habiletés en sécurité"
+    },
+    "Ta": {
+      "Element": "Tantale",
+      "Compétence": "Traitement de données"
+    },
+    "W": {
+      "Element": "Tungstène",
+      "Compétence": "Web (Développement Web)"
+    },
+    "Re": {
+      "Element": "Rhénium",
+      "Compétence": "Recherche"
+    },
+    "Os": {
+      "Element": "Osmium",
+      "Compétence": "Observation"
+    },
+    "Ir": {
+      "Element": "Iridium",
+      "Compétence": "Innovation"
+    },
+    "Pt": {
+      "Element": "Platine",
+      "Compétence": "Planification"
+    },
+    "Au": {
+      "Element": "Or",
+      "Compétence": "Analyse des données"
+    },
+    "Hg": {
+      "Element": "Mercure",
+      "Compétence": "Maîtrise technique"
+    },
+    "Tl": {
+      "Element": "Thallium",
+      "Compétence": "Traitement de données"
+    },
+    "Pb": {
+      "Element": "Plomb",
+      "Compétence": "Pédagogie"
+    },
+    "Bi": {
+      "Element": "Bismuth",
+      "Compétence": "Bonnes pratiques de laboratoire"
+    },
+    "Po": {
+      "Element": "Polonium",
+      "Compétence": "Planification"
+    },
+    "At": {
+      "Element": "Astate",
+      "Compétence": "Analyse des risques"
+    },
+    "Rn": {
+      "Element": "Radon",
+      "Compétence": "Résolution de problèmes"
+    },
+    "Fr": {
+      "Element": "Francium",
+      "Compétence": "Flexibilité"
+    },
+    "Ra": {
+      "Element": "Radium",
+      "Compétence": "Rigueur scientifique"
+    },
+    "Ac": {
+      "Element": "Actinium",
+      "Compétence": "Analyse des données"
+    },
+    "Th": {
+      "Element": "Thorium",
+      "Compétence": "Traitement de données"
+    },
+    "Pa": {
+      "Element": "Protactinium",
+      "Compétence": "Planification expérimentale"
+    },
+    "U": {
+      "Element": "Uranium",
+      "Compétence": "Utilisation de l'équipement"
+    },
+    "Np": {
+      "Element": "Neptunium",
+      "Compétence": "Négociation"
+    },
+    "Pu": {
+      "Element": "Plutonium",
+      "Compétence": "Planification"
+    },
+    "Am": {
+      "Element": "Américium",
+      "Compétence": "Analyse des données"
+    },
+    "Cm": {
+      "Element": "Curium",
+      "Compétence": "Coordination"
+    },
+    "Bk": {
+      "Element": "Berkélium",
+      "Compétence": "Bonnes pratiques de laboratoire"
+    },
+    "Cf": {
+      "Element": "Californium",
+      "Compétence": "Créativité"
+    },
+    "Es": {
+      "Element": "Einsteinium",
+      "Compétence": "Encadrement"
+    },
+    "Fm": {
+      "Element": "Fermium",
+      "Compétence": "Flexibilité"
+    },
+    "Md": {
+      "Element": "Mendélévium",
+      "Compétence": "Maîtrise technique"
+    },
+    "No": {
+      "Element": "Nobélium",
+      "Compétence": "Négociation"
+    },
+    "Lr": {
+      "Element": "Lawrencium",
+      "Compétence": "Leadership"
+    },
+    "Rf": {
+      "Element": "Rutherfordium",
+      "Compétence": "Recherche"
+    },
+    "Db": {
+      "Element": "Dubnium",
+      "Compétence": "Détermination"
+    },
+    "Sg": {
+      "Element": "Seaborgium",
+      "Compétence": "Sensibilité"
+    },
+    "Bh": {
+      "Element": "Bohrium",
+      "Compétence": "Bonnes pratiques de laboratoire"
+    },
+    "Hs": {
+      "Element": "Hassium",
+      "Compétence": "Habiletés en sécurité"
+    },
+    "Mt": {
+      "Element": "Meitnerium",
+      "Compétence": "Maîtrise technique"
+    },
+    "Ds": {
+      "Element": "Darmstadtium",
+      "Compétence": "Détermination"
+    },
+    "Rg": {
+      "Element": "Roentgenium",
+      "Compétence": "Rigueur scientifique"
+    },
+    "Cn": {
+      "Element": "Copernicium",
+      "Compétence": "Créativité"
+    },
+    "Nh": {
+      "Element": "Nihonium",
+      "Compétence": "Négociation"
+    },
+    "Fl": {
+      "Element": "Flerovium",
+      "Compétence": "Flexibilité"
+    },
+    "Mc": {
+      "Element": "Moscovium",
+      "Compétence": "Maîtrise technique"
+    },
+    "Lv": {
+      "Element": "Livermorium",
+      "Compétence": "Leadership"
+    },
+    "Ts": {
+      "Element": "Tennessine",
+      "Compétence": "Traitement de données"
+    },
+    "Og": {
+      "Element": "Oganesson",
+      "Compétence": "Observation"
+    }
+  }
+  

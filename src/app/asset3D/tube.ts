@@ -4,7 +4,7 @@ export class Tube extends THREE.Group {
   constructor() {
     super();
 
-    // Matériaux
+    // ----------couleurs
     const glassMaterial = new THREE.MeshBasicMaterial({
       color: 0xffffff,
       transparent: true,
@@ -20,27 +20,6 @@ export class Tube extends THREE.Group {
       transparent: true,
       opacity: 0.7,
     });
-
-    // Création du tube en verre
-    const tubeGeometry = new THREE.CylinderGeometry(0.5, 0.5, 3, 32); // Le diamètre de 1 unité et la hauteur de 2 unités
-    const tubeMesh = new THREE.Mesh(tubeGeometry, glassMaterial);
-    tubeMesh.position.set(0, -1, 0);
-    this.add(tubeMesh);
-
-    // Création du liquide dans le tube
-    const liquidGeometry = new THREE.CylinderGeometry(0.45, 0.45, 2, 32); // Légèrement plus petit que le tube en verre
-    const liquidMesh = new THREE.Mesh(liquidGeometry, liquidMaterial);
-    liquidMesh.position.set(0, -1.1, 0); // Positionnez le liquide au centre du tube
-    this.add(liquidMesh);
-
-    // Ajout des bouchons en haut et en bas du tube
-    const capGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const topCapMesh = new THREE.Mesh(capGeometry, bouchonMaterial);
-    topCapMesh.position.set(0, 0.5, 0); // Positionnez le bouchon supérieur
-    this.add(topCapMesh);
-    //------------------------------------------------------------
-
-    // Matériaux
     const glassMaterialgreen = new THREE.MeshBasicMaterial({
       color: 0xffffff,
       transparent: true,
@@ -56,23 +35,44 @@ export class Tube extends THREE.Group {
       transparent: true,
       opacity: 0.7,
     });
-    const tubeGeometrygreen = new THREE.CylinderGeometry(0.5, 0.5, 3, 32); // Le diamètre de 1 unité et la hauteur de 2 unités
+    // Création du tube en verre
+    const tubeGeometry = new THREE.CylinderGeometry(0.5, 0.5, 3, 32); 
+    const tubeMesh = new THREE.Mesh(tubeGeometry, glassMaterial);
+    tubeMesh.position.set(0, -1, 0);
+    this.add(tubeMesh);
+
+    // Création du liquide dans le tube
+    const liquidGeometry = new THREE.CylinderGeometry(0.45, 0.45, 2, 32); 
+    const liquidMesh = new THREE.Mesh(liquidGeometry, liquidMaterial);
+    liquidMesh.position.set(0, -1.1, 0);
+    this.add(liquidMesh);
+
+    // Ajout des bouchons en haut et en bas du tube
+    const capGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+    const topCapMesh = new THREE.Mesh(capGeometry, bouchonMaterial);
+    topCapMesh.position.set(0, 0.5, 0); 
+    this.add(topCapMesh);
+    //------------------------------------------------------------
+
+    
+    
+    const tubeGeometrygreen = new THREE.CylinderGeometry(0.5, 0.5, 3, 32); 
     const tubeMeshgreen = new THREE.Mesh(tubeGeometrygreen, glassMaterialgreen);
     tubeMeshgreen.position.set(0, -1, 2);
     this.add(tubeMeshgreen);
-    const liquidGeometrygreen = new THREE.CylinderGeometry(0.45, 0.45, 2, 32); // Légèrement plus petit que le tube en verre
+    const liquidGeometrygreen = new THREE.CylinderGeometry(0.45, 0.45, 2, 32); 
     const liquidMeshgreen = new THREE.Mesh(
       liquidGeometrygreen,
       liquidMaterialgreen
     );
-    liquidMeshgreen.position.set(0, -1.1, 2); // Positionnez le liquide au centre du tube
+    liquidMeshgreen.position.set(0, -1.1, 2); 
     this.add(liquidMeshgreen);
     const capGeometrygreen = new THREE.SphereGeometry(0.5, 32, 32);
     const topCapMeshgreen = new THREE.Mesh(
       capGeometrygreen,
       bouchonMaterialgreen
     );
-    topCapMeshgreen.position.set(0, 0.5, 2); // Positionnez le bouchon supérieur
+    topCapMeshgreen.position.set(0, 0.5, 2); 
     this.add(topCapMeshgreen);
 
     //----------------------------------------------------------------
@@ -91,30 +91,30 @@ export class Tube extends THREE.Group {
       transparent: true,
       opacity: 0.7,
     });
-    const tubeGeometryred = new THREE.CylinderGeometry(0.5, 0.5, 3, 32); // Le diamètre de 1 unité et la hauteur de 2 unités
+    const tubeGeometryred = new THREE.CylinderGeometry(0.5, 0.5, 3, 32); 
     const tubeMeshred = new THREE.Mesh(tubeGeometryred, glassMaterialred);
     tubeMeshred.position.set(0, -1, -2);
     this.add(tubeMeshred);
-    const liquidGeometryred = new THREE.CylinderGeometry(0.45, 0.45, 2, 32); // Légèrement plus petit que le tube en verre
+    const liquidGeometryred = new THREE.CylinderGeometry(0.45, 0.45, 2, 32);
     const liquidMeshred = new THREE.Mesh(liquidGeometryred, liquidMaterialred);
-    liquidMeshred.position.set(0, -1.1, -2); // Positionnez le liquide au centre du tube
+    liquidMeshred.position.set(0, -1.1, -2);
     this.add(liquidMeshred);
     const capGeometryred = new THREE.SphereGeometry(0.5, 32, 32);
     const topCapMeshred = new THREE.Mesh(capGeometryred, bouchonMaterialred);
-    topCapMeshred.position.set(0, 0.5, -2); // Positionnez le bouchon supérieur
+    topCapMeshred.position.set(0, 0.5, -2); 
     this.add(topCapMeshred);
 
     var rectangleGeometry = new THREE.BoxGeometry(2, 0.1, 10);
     var rectangleMaterial = new THREE.MeshBasicMaterial({ color: 0x800000 });
     var rectangle = new THREE.Mesh(rectangleGeometry, rectangleMaterial);
     this.add(rectangle);
-    const baseA = new THREE.CylinderGeometry(0.45, 0.45, 4, 32); // Légèrement plus petit que le tube en verre
+    const baseA = new THREE.CylinderGeometry(0.45, 0.45, 4, 32); 
     const liquidMeshredA = new THREE.Mesh(baseA, rectangleMaterial);
-    liquidMeshredA.position.set(0, -2, -4); // Positionnez le liquide au centre du tube
+    liquidMeshredA.position.set(0, -2, -4); 
     this.add(liquidMeshredA);
-    const baseB = new THREE.CylinderGeometry(0.45, 0.45, 4, 32); // Légèrement plus petit que le tube en verre
+    const baseB = new THREE.CylinderGeometry(0.45, 0.45, 4, 32);
     const liquidMeshredB = new THREE.Mesh(baseB, rectangleMaterial);
-    liquidMeshredB.position.set(0, -2, +4); // Positionnez le liquide au centre du tube
+    liquidMeshredB.position.set(0, -2, +4); 
     this.add(liquidMeshredB);
   }
 }

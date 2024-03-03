@@ -6,7 +6,7 @@ import { Micro } from './asset3D/micro';
 import { Tableau } from './asset3D/tableau';
 import { creerSceneAtome } from './asset3D/atome';
 import * as TWEEN from '@tweenjs/tween.js';
-//x ro uge , bleu y
+
 export class logo {
   private mouseDown = false;
   private mouseX = 0;
@@ -29,29 +29,27 @@ export class logo {
     camera.position.z = -20;
     camera.lookAt(0, 0, 0);
     //-------------------------------------------------------
-    const sol = new Sol(); // Supposons que sol est une classe qui crée le modèle 3D
+    const sol = new Sol();
     scene.add(sol);
     const table = new Table();
     scene.add(table);
     const micro = new Micro();
     micro.position.set(0, 5, 0);
-    micro.name = 'toto'; // Supposons que sol est une classe qui crée le modèle 3D
+    micro.name = 'toto';
     scene.add(micro);
 
-    const tube = new Tube(); // Supposons que Tube est une classe qui crée le modèle 3D
-    tube.position.set(5, 9, 0); // Supposons que sol est une classe qui crée le modèle 3D
+    const tube = new Tube();
+    tube.position.set(5, 9, 0);
     table.add(tube);
     const tab = new Tableau();
-    tab.name = 'tata'; // Supposons que sol est une classe qui crée le modèle 3D
-    tab.position.set(14, 14, -10); // Supposons que sol est une classe qui crée le modèle 3D
+    tab.name = 'tata';
+    tab.position.set(14, 14, -10);
     table.add(tab);
-    // Créer un raycaster
+
     var raycaster = new THREE.Raycaster();
 
-    // Créer un vecteur pour stocker la position du clic de la souris
     var mouse = new THREE.Vector2();
 
-    // Fonction pour gérer le clic de la souris
     function onMouseClick(event: { clientX: number; clientY: number }) {
       // Mettre à jour les coordonnées de la souris en fonction de la position du clic
       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -92,7 +90,7 @@ export class logo {
             z: targetPosition.z,
           },
           1000
-        ) // Animez la caméra vers la position cible avec un décalage z pour qu'elle ne soit pas juste devant l'objet
+        )
         .easing(TWEEN.Easing.Quadratic.Out)
         .onUpdate(() => {
           camera.lookAt(targetPosition);
@@ -128,8 +126,7 @@ export class logo {
             z: targetPosition.z,
           },
           1000
-        ) // Animez la caméra vers la position cible avec un décalage z pour qu'elle ne soit pas juste devant l'objet
-        .easing(TWEEN.Easing.Quadratic.Out)
+        )
 
         .onUpdate(() => {
           camera.lookAt(20, 5, 0);
@@ -154,7 +151,6 @@ export class logo {
       this.mouseY = event.clientY;
     });
 
-   
     document.addEventListener('mouseup', () => {
       this.mouseDown = false;
     });
@@ -166,7 +162,7 @@ export class logo {
 
         scene.rotation.y += deltaX * 0.01;
         scene.rotation.x += deltaY * 0.01;
- this.mouseX = event.clientX;
+        this.mouseX = event.clientX;
         this.mouseY = event.clientY;
       }
     });
@@ -174,12 +170,11 @@ export class logo {
       if (event.deltaY < 0) {
         camera.position.z += 0.5;
         camera.position.y -= 0.5;
-        camera.position.x += 0.5; 
-      }
-    else if (event.deltaY > 0) {
+        camera.position.x += 0.5;
+      } else if (event.deltaY > 0) {
         camera.position.z -= 0.5;
         camera.position.x -= 0.5;
-        camera.position.y += 0.5; 
+        camera.position.y += 0.5;
       }
     });
   }

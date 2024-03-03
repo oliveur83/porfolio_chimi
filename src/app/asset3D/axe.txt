@@ -1,0 +1,19 @@
+
+  // // Configuration des ombres de la lumière ponctuelle
+  // emittingSphereLight.castShadow = true;
+  // emittingSphereLight.shadow.mapSize.width = 1024;
+  // emittingSphereLight.shadow.mapSize.height = 1024;
+  // const materialX = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Rouge pour l'axe x
+  // const materialY = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Vert pour l'axe y
+  // const materialZ = new THREE.MeshBasicMaterial({ color: 0x0000ff }); // Bleu pour l'axe z
+  // const geometryX = new THREE.CylinderGeometry(0.1, 0.1, 100, 32); // Axe x
+  // const geometryY = new THREE.CylinderGeometry(0.1, 0.1, 100, 32); // Axe y
+  // const geometryZ = new THREE.CylinderGeometry(0.1, 0.1, 100, 32); // Axe z
+  // const axeX = new THREE.Mesh(geometryX, materialX);
+  // const axeY = new THREE.Mesh(geometryY, materialY);
+  // const axeZ = new THREE.Mesh(geometryZ, materialZ);
+  // axeX.rotation.z = Math.PI / 2; // Rotation de 90 degrés autour de l'axe z pour l'axe x
+  // axeY.rotation.x = -Math.PI / 2; // Rotation de -90 degrés autour de l'axe x pour l'axe y
+  // scene.add(axeX);
+  // scene.add(axeY);
+  // scene.add(axeZ);

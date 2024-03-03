@@ -129,8 +129,8 @@ export class Tableau extends THREE.Group {
     this.rotateX(3.14);
     this.rotateY(Math.PI / 2);
 
-    const tableMaterial = new THREE.MeshBasicMaterial({ color: 0x000 }); // Gris clair
-    const tableMaterialmur = new THREE.MeshBasicMaterial({ color: 0x00008b }); // Gris clair
+    const tableMaterial = new THREE.MeshBasicMaterial({ color: 0x000 });
+    const tableMaterialmur = new THREE.MeshBasicMaterial({ color: 0x00008b }); 
 
     const tableTopGeometry = new THREE.BoxGeometry(20, 0.2, 10);
     const tableTop = new THREE.Mesh(tableTopGeometry, tableMaterial);
