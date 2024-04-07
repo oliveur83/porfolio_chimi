@@ -2,22 +2,76 @@
   margin: 0;
   padding:0;
   width: 100%;
-  min-height: 100vh; /* Pour couvrir toute la hauteur de la fenêtre visible */
+  min-height: 100vh; 
   background-color: rgb(196, 228, 244);
 }
   body {
     background-color: rgb(196, 228, 244);
     height: 100%;
     padding:0;
-    margin: 0; /* Pour enlever la marge par défaut du body */
+    margin: 0; 
   }
   
   html {
     background-color: rgb(196, 228, 244);
     height: 100%;
     padding:0;
-    margin: 0; /* Pour enlever la marge par défaut du body */
+    margin: 0; 
   }
 
   h1{font-size: 70px;
   z-index: 1000;}
+  #menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  padding: 20px;
+}
+
+#menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0);
+  pointer-events: none;
+}
+
+.active-link {
+  font-weight: bold;
+}
+
+@keyframes rippleAnimation {
+  to {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+.line {
+  width: 100%;
+  height: 2px; 
+  background-color: black; 
+  position: absolute;
+  top: calc(50% - 1px); 
+  animation: moveLine 2s infinite alternate; 
+}
+
+@keyframes moveLine {
+  0% {
+    top: calc(50% - 1px); 
+  }
+  100% {
+    top: calc(50% + 1px); 
+  }
+}
+

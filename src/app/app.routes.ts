@@ -1,3 +1,7 @@
 import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
+import { ProfilComponent } from './profil/profil.component';
+import { AppComponent } from './app.component';
+export const routes: Routes = [
+    { path: 'profil', component: ProfilComponent }, 
+    { path: '', component: AppComponent }, 
+];
