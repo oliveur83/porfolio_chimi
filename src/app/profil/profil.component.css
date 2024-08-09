@@ -1,0 +1,39 @@
+.profil-container {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .profil-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .profil-image img {
+    width: 200px; /* Ajustez la taille de votre photo */
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid #009688; /* Couleur de la bordure */
+  }
+  
+  .profil-text {
+    flex: 2;
+    padding: 0 20px;
+  }
+  
+  .profil-text h2 {
+    color: #009688;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .profil-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  

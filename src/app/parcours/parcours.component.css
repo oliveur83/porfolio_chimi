@@ -1,0 +1,79 @@
+.parcours {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .parcours h2 {
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .etudes, .lycee {
+    margin-bottom: 20px;
+  }
+  
+  .etudes h3, .lycee h3 {
+    color: #009688;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #009688;
+    padding-bottom: 5px;
+  }
+  
+  .etudes ul, .lycee ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .etudes ul li, .lycee ul li {
+    margin-bottom: 10px;
+  }
+  
+  .etudes ul li strong, .lycee ul li strong {
+    color: #009688;
+  }
+  
+  /* Style chimiste */
+  .parcours {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border: 1px solid #ccc;
+  }
+  
+  .parcours h2 {
+    font-size: 2.5rem;
+    color: #009688;
+  }
+  
+  .etudes, .lycee {
+    margin-bottom: 30px;
+  }
+  
+  .etudes h3, .lycee h3 {
+    font-size: 2rem;
+    color: #009688;
+    border-bottom: 3px solid #009688;
+    padding-bottom: 10px;
+  }
+  
+  .etudes ul, .lycee ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .etudes ul li, .lycee ul li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .etudes ul li strong, .lycee ul li strong {
+    color: #009688;
+    font-weight: bold;
+  }
+  

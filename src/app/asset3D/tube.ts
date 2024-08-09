@@ -50,7 +50,7 @@ export class Tube extends THREE.Group {
     // Ajout des bouchons en haut et en bas du tube
     const capGeometry = new THREE.SphereGeometry(0.5, 32, 32);
     const topCapMesh = new THREE.Mesh(capGeometry, bouchonMaterial);
-    topCapMesh.position.set(0, 0.5, 0); 
+    topCapMesh.position.set(0, -2.5, 0); 
     this.add(topCapMesh);
     //------------------------------------------------------------
 
@@ -72,7 +72,7 @@ export class Tube extends THREE.Group {
       capGeometrygreen,
       bouchonMaterialgreen
     );
-    topCapMeshgreen.position.set(0, 0.5, 2); 
+    topCapMeshgreen.position.set(0,-2.5, 2); 
     this.add(topCapMeshgreen);
 
     //----------------------------------------------------------------
@@ -101,7 +101,7 @@ export class Tube extends THREE.Group {
     this.add(liquidMeshred);
     const capGeometryred = new THREE.SphereGeometry(0.5, 32, 32);
     const topCapMeshred = new THREE.Mesh(capGeometryred, bouchonMaterialred);
-    topCapMeshred.position.set(0, 0.5, -2); 
+    topCapMeshred.position.set(0,-2.5, -2); 
     this.add(topCapMeshred);
 
     var rectangleGeometry = new THREE.BoxGeometry(2, 0.1, 10);

@@ -6,6 +6,7 @@ import { Micro } from './asset3D/micro';
 import { Tableau } from './asset3D/tableau';
 import { creerSceneAtome } from './asset3D/atome';
 import * as TWEEN from '@tweenjs/tween.js';
+import { blouser } from './asset3D/blouser';
 
 export class logo {
   private mouseDown = false;
@@ -14,73 +15,70 @@ export class logo {
   constructor(public container: HTMLElement) {}
 
   init() {
-    // Création de la scène
     let scene = new THREE.Scene();
-    // Création de la caméra
     const camera = new THREE.PerspectiveCamera(
       75,
       this.container.clientWidth / this.container.clientHeight,
       0.1,
       1000
     );
-
-    camera.position.x = -20;
-    camera.position.y = 20;
-    camera.position.z = -20;
+    camera.position.x = -0;
+    camera.position.y = 10;
+    camera.position.z = -15;
     camera.lookAt(0, 0, 0);
-    //-------------------------------------------------------
-    const sol = new Sol();
-    scene.add(sol);
-    const table = new Table();
-    scene.add(table);
+
     const micro = new Micro();
     micro.position.set(0, 5, 0);
-    micro.name = 'toto';
+    micro.name = 'micro';
     scene.add(micro);
-
+    const sol = new Sol();
+    sol.name="sol"
+    scene.add(sol);
+    const table = new Table();
+    table.name="table"
+    scene.add(table);
     const tube = new Tube();
     tube.position.set(5, 9, 0);
-    table.add(tube);
+    tube.name="tube"
+    scene.add(tube);
     const tab = new Tableau();
-    tab.name = 'tata';
-    tab.position.set(14, 14, -10);
-    table.add(tab);
+    tab.name = 'tableau';
+    tab.position.set(13, 20, -9);
+    scene.add(tab);
 
+    const blouserr =new blouser();
+    blouserr.position.set(0, 10, 5);
+    scene.add(blouserr);
+    
     var raycaster = new THREE.Raycaster();
-
     var mouse = new THREE.Vector2();
-
     function onMouseClick(event: { clientX: number; clientY: number }) {
       // Mettre à jour les coordonnées de la souris en fonction de la position du clic
       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
       raycaster.setFromCamera(mouse, camera);
-
-      var intersects = raycaster.intersectObjects(scene.children, true);
-
+      var intersects = raycaster.intersectObjects(scene.children);
       if (
         intersects.length > 0 &&
         intersects[0].object.parent?.name == micro.name
       ) {
-        toto();
+        gotosceneatome();
       } else if (
-        intersects.length > 0 &&
-        intersects[0].object.parent?.name == tab.name
+        intersects.length > 0
+        // intersects[0].object.parent?.name == tab.name
       ) {
-        tata();
+        gotoscenetableau();
       }
+      
     }
-    window.addEventListener('click', onMouseClick, false);
-
     //-------------------------------------
     // Création du rendu
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(this.container.clientWidth, this.container.clientHeight);
     this.container.appendChild(renderer.domElement);
-    renderer.setClearColor(0xc4e4f4, 1);
+    renderer.setClearColor(0xbff0e2,1);
     //------------------------------------------
-    function toto() {
+    function gotosceneatome() {
       const targetPosition = micro.position.clone();
       const cameraTarget = new TWEEN.Tween(camera.position)
         .to(
@@ -110,13 +108,13 @@ export class logo {
           scene.clear();
           scene.add(nouvelleScene);
           scene = nouvelleScene;
-          camera.position.x = -10;
+          camera.position.set(-20, -20, 0); 
+          camera.lookAt(0, 0, 0); 
         });
       cameraTarget.chain(nextAnimation);
-
       cameraTarget.start();
     }
-    function tata() {
+    function gotoscenetableau() {
       const targetPosition = micro.position.clone();
       const cameraTarget = new TWEEN.Tween(camera.position)
         .to(
@@ -131,16 +129,15 @@ export class logo {
         .onUpdate(() => {
           camera.lookAt(20, 5, 0);
         })
-        .onComplete(() => {
-          table.remove(tube);
-        });
+        // .onComplete(() => {
+        //   table.remove(tube);
+        // });
 
       // Démarrer la première animation
       cameraTarget.start();
     }
     function animate() {
       requestAnimationFrame(animate);
-      //scene.rotation.y += 0.01;
       TWEEN.update();
       renderer.render(scene, camera);
     }
@@ -161,7 +158,7 @@ export class logo {
         const deltaY = event.clientY - this.mouseY;
 
         scene.rotation.y += deltaX * 0.01;
-        scene.rotation.x += deltaY * 0.01;
+        //scene.rotation.x += deltaY * 0.01;
         this.mouseX = event.clientX;
         this.mouseY = event.clientY;
       }
@@ -177,5 +174,6 @@ export class logo {
         camera.position.y += 0.5;
       }
     });
+    window.addEventListener('click', onMouseClick, false);
   }
 }

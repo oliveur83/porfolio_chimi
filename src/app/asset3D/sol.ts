@@ -4,8 +4,8 @@ export class Sol extends THREE.Group {
   constructor() {
     super();
     //-----------couleur ---------------------
-    const couleur_sol = new THREE.MeshBasicMaterial({ color: 0x000 });
-    const couleur_mur = new THREE.MeshBasicMaterial({ color: 0x00008b });
+    const couleur_sol = new THREE.MeshBasicMaterial({ color: 0x807161 });
+    const couleur_mur = new THREE.MeshBasicMaterial({ color: 0x7f5e77 });
     //-----------structure---------------------
     const structure_rectangle = new THREE.BoxGeometry(30, 0.2, 30);
     //-----------creation sol ---------------------

@@ -1,13 +1,7 @@
 <div id="menu">
-  <a routerLink="/">Home</a>
+  <a routerLink="/" (click)="home()">Home</a>
   <a routerLink="/profil" (click)="profil()">Profil</a>
-  <a routerLink="/competence">Compétences</a>
-  <a routerLink="/parcours">Mon Parcours</a>
+  <a routerLink="/competence" (click)="competence()">Compétences</a>
+  <a routerLink="/parcours" (click)="parcours()">Mon Parcours</a>
 </div>
-<div class="line"></div>
-
-<div id="container">
-
-    <!-- Contenu du conteneur -->
-  </div>
   <router-outlet></router-outlet>

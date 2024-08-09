@@ -3,8 +3,7 @@ import * as THREE from 'three';
 export class Tableau extends THREE.Group {
   constructor() {
     super();
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
+
     function createTextTexture(
       text: string,
       fontSize: number
@@ -48,14 +47,14 @@ export class Tableau extends THREE.Group {
       );
       return mesh;
     }
-    const textMesh = createTextMesh(' tableau des compétences', 100);
-    textMesh.position.y = -4;
-    textMesh.position.z = 0;
-    textMesh.position.x = 10;
+    const textMesh = createTextMesh(' Tableau des compétences', 100);
+    textMesh.position.y = -5;
+    textMesh.position.z = 1;
+    textMesh.position.x = 9;
     textMesh.rotation.z = Math.PI;
     textMesh.rotation.y = Math.PI;
     this.add(textMesh);
-    var rectangleMaterial = new THREE.MeshBasicMaterial({ color: 0x800000 });
+    var rectangleMaterial = new THREE.MeshBasicMaterial({ color: 0x92a797 });
     const baseRadius = 0.05;
     const baseHeight = 2;
     const baseSegments = 32;
@@ -117,26 +116,23 @@ export class Tableau extends THREE.Group {
         const positionY = i;
         if (tableau_per[j][i]) {
           const nouvelleCase = creerCase(positionX, positionY);
-
+          nouvelleCase.translateZ(0.7);
           this.add(nouvelleCase);
         }
       }
     }
 
-    this.translateY(11);
-    this.translateX(5);
-    this.translateZ(-10);
     this.rotateX(3.14);
     this.rotateY(Math.PI / 2);
 
-    const tableMaterial = new THREE.MeshBasicMaterial({ color: 0x000 });
+    const tableMaterial = new THREE.MeshBasicMaterial({ color: 0x56735d });
     const tableMaterialmur = new THREE.MeshBasicMaterial({ color: 0x00008b }); 
 
-    const tableTopGeometry = new THREE.BoxGeometry(20, 0.2, 10);
+    const tableTopGeometry = new THREE.BoxGeometry(20, 0.2, 12);
     const tableTop = new THREE.Mesh(tableTopGeometry, tableMaterial);
     tableTop.rotateX(Math.PI / 2);
     tableTop.translateX(10);
-    tableTop.translateZ(-4);
+    tableTop.translateZ(-5);
     tableTop.translateY(1);
     this.add(tableTop);
   }

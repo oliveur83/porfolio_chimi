@@ -5,7 +5,7 @@ export class Table extends THREE.Group {
     super();
 
     // ------------couleur-------------------
-    const tableMaterial = new THREE.MeshBasicMaterial({ color: 0xcccccc }); 
+    const tableMaterial = new THREE.MeshBasicMaterial({ color: 0xb6c5f7 }); 
     const edgeMaterial = new THREE.LineBasicMaterial({ color: 0x000000 }); 
     //--------------structure-----------------
     const tableTopGeometry = new THREE.BoxGeometry(20, 5, 10);

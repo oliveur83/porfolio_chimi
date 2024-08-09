@@ -1,0 +1,30 @@
+.competences-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .competence {
+    margin-bottom: 20px;
+  }
+  
+  .competence h3 {
+    font-size: 1.5rem;
+    color: #009688;
+  }
+  
+  .progress {
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    background-color: #009688;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.9rem;
+  }
+  

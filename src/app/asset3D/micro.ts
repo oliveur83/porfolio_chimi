@@ -32,7 +32,11 @@ export class Micro extends THREE.Group {
     const cylindertu = new THREE.Mesh(cylinderGeometrytu, cylinderMaterialtu);
     cylindertu.position.set(-1.6, 3.5, 0);
     cylindertu.rotateZ(+45);
-
+    tableTop.name='micro'
+    pyramid.name='micro'
+    sphere.name='micro'
+    cylinder.name='micro'
+    cylindertu.name='micro'
     this.add(tableTop);
     this.add(pyramid);
     this.add(sphere);

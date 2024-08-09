@@ -1,9 +1,12 @@
-<p>profil works!</p>
-<p>profil works!</p>
-<p>profil works!</p>
-<p>profil works!</p>
-<p>profil works!</p>
-<p>profil works!</p>
-<p>profil works!</p>
-<p>profil works!</p>
-<p>profil works!</p>
+<div class="profil-container">
+  <div class="profil-image">
+    <img [src]="photoUrl" alt="Photo de profil">
+  </div>
+  <div class="profil-text">
+    <h2>Bruyère Maryne</h2>
+    <!-- Utilisation des balises Angular pour afficher le texte multilingue -->
+    <p>{{ presentation.francais }}</p>
+    <p>{{ presentation.anglais }}</p>
+    <p>{{ presentation.norvegien }}</p>
+  </div>
+</div>
