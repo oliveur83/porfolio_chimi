@@ -1,7 +1,7 @@
 import { Component,ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { logo } from './logo';
+
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -20,25 +20,21 @@ export class AppComponent {
   
   ngAfterViewInit() {
     const container = this.elementRef.nativeElement.querySelector('#container');
-
-    const threeJSUtils = new logo(container);
- 
-    console.log("toto")
   }
   profil(){
     this.router.navigate(['profil']);
-    console.log()
+
   } 
   competence(){
     this.router.navigate(['competence']);
-    console.log()
+
   }
   parcours(){
     this.router.navigate(['parcours']);
-    console.log()
+   
   }
    home(){
     this.router.navigate(['Home']);
-    console.log()
+
   }
 }

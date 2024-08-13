@@ -23,7 +23,7 @@ export class PrincipalComponent {
 
     const threeJSUtils = new logo(container);
     threeJSUtils.init();
-    console.log("toto")
+  
   }
 }
 
