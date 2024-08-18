@@ -56,7 +56,59 @@ const nbr_neutron_proton=10
   var renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
-
+  function createTextTexture(text: string, fontSize: number): THREE.Texture | null {
+    // Créer un canvas
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+  
+    if (!context) {
+      return null;
+    }
+  
+    context.font = `${fontSize}px Arial`;
+    const lines = text.split('\n');
+    const lineHeight = fontSize + 10;
+  
+    // Calculer la largeur et la hauteur du texte en fonction des lignes
+    const textWidth = Math.max(...lines.map(line => Math.ceil(context.measureText(line).width))) + 20.0;
+    const textHeight = lineHeight * lines.length;
+  
+    canvas.width = textWidth;
+    canvas.height = textHeight;
+  
+    context.font = `bold ${fontSize}px Arial`;
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillStyle = '#ffffff';
+  
+    // Dessiner chaque ligne sur le canvas
+    lines.forEach((line, index) => {
+      context.fillText(line, textWidth / 2, (index + 0.5) * lineHeight);
+    });
+  
+    const texture = new THREE.Texture(canvas);
+    texture.needsUpdate = true;
+    return texture;
+  }
+  
+  function createTextMesh(text: string, fontSize: number): THREE.Mesh {
+    const texture = createTextTexture(text, fontSize);
+    const material = new THREE.MeshBasicMaterial({
+      map: texture,
+      transparent: true,
+      side: THREE.DoubleSide,
+    });
+    const mesh = new THREE.Mesh(
+      new THREE.PlaneGeometry(
+        texture?.image.width / 60,
+        texture?.image.height / 60
+      ),
+      material
+    );
+    return mesh;
+  }
+  const textMesh = createTextMesh(' Tableau des compétences \n serieux', 100);
+  scene.add(textMesh);
   function animate() {
     requestAnimationFrame(animate);
     // deplacement electron 

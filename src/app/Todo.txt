@@ -2,7 +2,9 @@
 -faire en sorte que quand on arrive sur la page atome, l'atome est au centre et en un peu dezoomer
 -faire en sorte que quand on clic sur compétence ca aille sur le microcope et que chaque proton soit une compétence 
 -noter des savoir être dans le tableau (ponctuelle, autonome,...) 
--rajouter une blouse 
 -ajouter des lunettes de protection
 -avoir un cadre sur le mur ou on peut mettre des foto de mes experience 
 -sur la page atome :une liste  sur le coté gauche"Competence: -..." , et a droite l'atome en deco 
+-ajouter les experience pro 
+- graphique spectrometre 0 100 quality 
+- ajouter un comtact 
