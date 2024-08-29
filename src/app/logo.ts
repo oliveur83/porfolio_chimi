@@ -15,6 +15,9 @@ export class logo {
   constructor(public container: HTMLElement) {}
 
   init() {
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      
+    
     let scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -108,8 +111,13 @@ export class logo {
           scene.clear();
           scene.add(nouvelleScene);
           scene = nouvelleScene;
-          camera.position.set(-20, -20, 0); 
+          camera.position.set(+20, 0, +20); 
           camera.lookAt(0, 0, 0); 
+               // Désactiver les événements liés à la caméra pour bloquer les mouvements
+      document.removeEventListener('mousedown', onMouseDownHandler);
+      document.removeEventListener('mouseup', onMouseUpHandler);
+      document.removeEventListener('mousemove', onMouseMoveHandler);
+      document.removeEventListener('wheel', onWheelHandler);
         });
       cameraTarget.chain(nextAnimation);
       cameraTarget.start();
@@ -142,28 +150,29 @@ export class logo {
       renderer.render(scene, camera);
     }
     animate();
-    document.addEventListener('mousedown', (event) => {
+    const onMouseDownHandler = (event: MouseEvent) => {
       this.mouseDown = true;
       this.mouseX = event.clientX;
       this.mouseY = event.clientY;
-    });
-
-    document.addEventListener('mouseup', () => {
+    };
+    
+    const onMouseUpHandler = () => {
       this.mouseDown = false;
-    });
-
-    document.addEventListener('mousemove', (event) => {
+    };
+    
+    const onMouseMoveHandler = (event: MouseEvent) => {
       if (this.mouseDown) {
         const deltaX = event.clientX - this.mouseX;
         const deltaY = event.clientY - this.mouseY;
-
+    
         scene.rotation.y += deltaX * 0.01;
-        //scene.rotation.x += deltaY * 0.01;
+        // scene.rotation.x += deltaY * 0.01;
         this.mouseX = event.clientX;
         this.mouseY = event.clientY;
       }
-    });
-    document.addEventListener('wheel', (event) => {
+    };
+    
+    const onWheelHandler = (event: WheelEvent) => {
       if (event.deltaY < 0) {
         camera.position.z += 0.5;
         camera.position.y -= 0.5;
@@ -173,7 +182,14 @@ export class logo {
         camera.position.x -= 0.5;
         camera.position.y += 0.5;
       }
-    });
-    window.addEventListener('click', onMouseClick, false);
+    };
+    if (typeof document !== 'undefined') {
+      document.addEventListener('mousedown', onMouseDownHandler);
+      document.addEventListener('mouseup', onMouseUpHandler);
+      document.addEventListener('mousemove', onMouseMoveHandler);
+      document.addEventListener('wheel', onWheelHandler);
+    }
+    window.addEventListener('click', onMouseClick, false);   
   }
+}
 }
