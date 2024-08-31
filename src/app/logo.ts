@@ -133,8 +133,8 @@ export class logo {
 
         // Réinitialiser et repositionner la caméra pour la nouvelle scène
         this.createCamera();
-        this.camera.position.set(0, 0, 20); // Ajustez ces coordonnées selon vos besoins
-        this.camera.lookAt(0, 0, 0);
+        this.camera.position.set(-15, 0, 25); // Ajustez ces coordonnées selon vos besoins
+        this.camera.lookAt(-15, 0, 0);
 
         // Re-ajouter les événements si nécessaire
         this.addEventListeners();

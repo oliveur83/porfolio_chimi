@@ -107,27 +107,29 @@ const nbr_neutron_proton=10
     );
     return mesh;
   }
-  const textMesh = createTextMesh(' Tableau des compétences \n serieux', 100);
+  const textMesh = createTextMesh('Tableau des compétences \n - Sérieux \n - Connaissances théoriques en chimie \n - Analyse chimique \n - Compétences en laboratoire \n - Méthodes de synthèse \n - Compétences en mathématiques et physique \n - Compétences en résolution de problèmes \n - Informatique et modélisation \n - Communication scientifique \n - Travail en équipe et gestion de projet \n - Sécurité et règlementation', 100);
+
+  textMesh.translateX(-35)
   
   scene.add(textMesh);
- // Fonction pour créer un tube pour chaque axe avec une épaisseur
-    function createAxisCylinder(start: THREE.Vector3, end: THREE.Vector3, color: number, radius: number) {
-        const path = new THREE.LineCurve3(start, end); // Définir le chemin entre les points
-        const tubeGeometry = new THREE.TubeGeometry(path, 20, radius, 8, false); // Créer un tube autour du chemin
-        const tubeMaterial = new THREE.MeshBasicMaterial({ color: color }); // Matériau coloré
-        const cylinder = new THREE.Mesh(tubeGeometry, tubeMaterial); // Créer le maillage
-        return cylinder;
-    }
+//  // Fonction pour créer un tube pour chaque axe avec une épaisseur
+//     function createAxisCylinder(start: THREE.Vector3, end: THREE.Vector3, color: number, radius: number) {
+//         const path = new THREE.LineCurve3(start, end); // Définir le chemin entre les points
+//         const tubeGeometry = new THREE.TubeGeometry(path, 20, radius, 8, false); // Créer un tube autour du chemin
+//         const tubeMaterial = new THREE.MeshBasicMaterial({ color: color }); // Matériau coloré
+//         const cylinder = new THREE.Mesh(tubeGeometry, tubeMaterial); // Créer le maillage
+//         return cylinder;
+//     }
 
-    // Créer des tubes pour chaque axe
-    const xAxis = createAxisCylinder(new THREE.Vector3(0, 0, 0), new THREE.Vector3(10, 0, 0), 0xff0000, 0.1); // Rouge pour X
-    const yAxis = createAxisCylinder(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 10, 0), 0x00ff00, 0.1); // Vert pour Y
-    const zAxis = createAxisCylinder(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 10), 0x0000ff, 0.1); // Bleu pour Z
+//     // Créer des tubes pour chaque axe
+//     const xAxis = createAxisCylinder(new THREE.Vector3(0, 0, 0), new THREE.Vector3(10, 0, 0), 0xff0000, 0.1); // Rouge pour X
+//     const yAxis = createAxisCylinder(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 10, 0), 0x00ff00, 0.1); // Vert pour Y
+//     const zAxis = createAxisCylinder(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 10), 0x0000ff, 0.1); // Bleu pour Z
 
-    // Ajouter les cylindres à la scène
-    scene.add(xAxis);
-    scene.add(yAxis);
-    scene.add(zAxis);
+//     // Ajouter les cylindres à la scène
+//     scene.add(xAxis);
+//     scene.add(yAxis);
+//     scene.add(zAxis);
   function animate() {
     requestAnimationFrame(animate);
     // deplacement electron 
