@@ -40,7 +40,7 @@ export class logo {
       0.1,
       1000
     );
-    this.camera.position.set(-0, 10, -15);
+    this.camera.position.set(-10, 20, -15);
     this.camera.lookAt(0, 0, 0);
   }
 
@@ -69,7 +69,7 @@ export class logo {
     this.scene.add(tab);
 
     const blouserr = new blouser();
-    blouserr.position.set(0, 10, 5);
+    blouserr.position.set(0, 10, 14.5);
     this.scene.add(blouserr);
   }
 
@@ -99,10 +99,13 @@ export class logo {
 
     const intersects = raycaster.intersectObjects(this.scene.children);
     if (intersects.length > 0) {
+      console.log("je susi la ")
       const object = intersects[0].object;
+      console.log(object)
       if (object.parent?.name === 'micro') {
         this.gotosceneatome();
       } else if (object.parent?.name === 'tableau') {
+
         this.gotoscenetableau();
       }
     }

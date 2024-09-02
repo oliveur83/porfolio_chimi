@@ -6,8 +6,8 @@ export class blouser extends THREE.Group {
         const couleur_sol = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
         const couleur_col = new THREE.MeshBasicMaterial({ color: 0x000000 });
         
-        const structure_rectangle = new THREE.BoxGeometry(5, 10, 2);
- const structure_rectangle_mache = new THREE.BoxGeometry(2, 5, 2);
+        const structure_rectangle = new THREE.BoxGeometry(5, 10, 1);
+ const structure_rectangle_mache = new THREE.BoxGeometry(2, 5, 1);
  const structure_rectangle_col = new THREE.BoxGeometry(0.5, 2,1);
           
         //-----------structure---------------------

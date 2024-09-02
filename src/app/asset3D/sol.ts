@@ -7,7 +7,7 @@ export class Sol extends THREE.Group {
     const couleur_sol = new THREE.MeshBasicMaterial({ color: 0x807161 });
     const couleur_mur = new THREE.MeshBasicMaterial({ color: 0x7f5e77 });
     //-----------structure---------------------
-    const structure_rectangle = new THREE.BoxGeometry(30, 0.2, 30);
+    const structure_rectangle = new THREE.BoxGeometry(30, 1, 30);
     //-----------creation sol ---------------------
     const tableTop = new THREE.Mesh(structure_rectangle, couleur_sol);
     tableTop.position.y = 1;
@@ -22,7 +22,7 @@ export class Sol extends THREE.Group {
     tablelright.rotateZ(Math.PI / 2);
     tablelright.translateY(-15);
     tablelright.translateX(15);
-    tableleft.name = 'toto1';
+    tableleft.name = 'tableau';
     tablelright.name = 'toto3';
 
     this.add(tableTop);

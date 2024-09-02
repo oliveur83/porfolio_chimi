@@ -107,7 +107,7 @@ const nbr_neutron_proton=10
     );
     return mesh;
   }
-  const textMesh = createTextMesh('Tableau des compétences \n - Sérieux \n - Connaissances théoriques en chimie \n - Analyse chimique \n - Compétences en laboratoire \n - Méthodes de synthèse \n - Compétences en mathématiques et physique \n - Compétences en résolution de problèmes \n - Informatique et modélisation \n - Communication scientifique \n - Travail en équipe et gestion de projet \n - Sécurité et règlementation', 100);
+  const textMesh = createTextMesh('mes compétence en atome \n - Sérieux \n - Connaissances théoriques en chimie \n - Analyse chimique \n - Compétences en laboratoire \n - Méthodes de synthèse \n - Compétences en mathématiques et physique \n - Compétences en résolution de problèmes \n - Informatique et modélisation \n - Communication scientifique \n - Travail en équipe et gestion de projet \n - Sécurité et règlementation', 100);
 
   textMesh.translateX(-35)
   
