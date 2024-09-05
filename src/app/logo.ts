@@ -7,6 +7,7 @@ import { Micro } from './asset3D/micro';
 import { Tableau } from './asset3D/tableau';
 import { creerSceneAtome } from './asset3D/atome';
 import { blouser } from './asset3D/blouser';
+import { Lunette } from './asset3D/lunette';
 
 export class logo {
   private mouseDown = false;
@@ -40,7 +41,7 @@ export class logo {
       0.1,
       1000
     );
-    this.camera.position.set(-10, 20, -15);
+    this.camera.position.set(-25,35, -30);
     this.camera.lookAt(0, 0, 0);
   }
 
@@ -71,6 +72,10 @@ export class logo {
     const blouserr = new blouser();
     blouserr.position.set(0, 10, 14.5);
     this.scene.add(blouserr);
+
+    const lunette = new Lunette();
+    lunette.position.set(-8, 7,0);
+    this.scene.add(lunette);
   }
 
   addEventListeners() {
