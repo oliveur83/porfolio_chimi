@@ -3,7 +3,6 @@ import * as THREE from 'three';
 export class Sol extends THREE.Group {
   constructor() {
     super();
-    //-----------couleur ---------------------
     const couleur_sol = new THREE.MeshBasicMaterial({ color: 0x807161 });
     const couleur_mur = new THREE.MeshBasicMaterial({ color: 0x7f5e77 });
     //-----------structure---------------------
@@ -15,7 +14,7 @@ export class Sol extends THREE.Group {
     //-----------creation des deux mur  ---------------------
     const tableleft = new THREE.Mesh(structure_rectangle, couleur_mur);
     const tablelright = new THREE.Mesh(structure_rectangle, couleur_mur);
-    
+
     tableleft.rotateX(Math.PI / 2);
     tableleft.translateY(15);
     tableleft.translateZ(-15);
