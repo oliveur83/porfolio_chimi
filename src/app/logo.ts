@@ -20,10 +20,13 @@ export class logo {
   constructor(public container: HTMLElement) {
     this.scene = new THREE.Scene();
     this.renderer = new THREE.WebGLRenderer();
-    this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+    this.renderer.setSize(
+      this.container.clientWidth,
+      this.container.clientHeight
+    );
     this.container.appendChild(this.renderer.domElement);
     this.renderer.setClearColor(0xbff0e2, 1);
-
+    window.addEventListener('resize', this.onWindowResize.bind(this));
     this.init();
   }
 
@@ -33,7 +36,15 @@ export class logo {
     this.addEventListeners();
     this.animate();
   }
-
+  onWindowResize() {
+    this.camera.aspect =
+      this.container.clientWidth / this.container.clientHeight;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(
+      this.container.clientWidth,
+      this.container.clientHeight
+    );
+  }
   createCamera() {
     this.camera = new THREE.PerspectiveCamera(
       75,
@@ -41,7 +52,7 @@ export class logo {
       0.1,
       1000
     );
-    this.camera.position.set(-25,35, -30);
+    this.camera.position.set(-25, 35, -30);
     this.camera.lookAt(0, 0, 0);
   }
 
@@ -52,16 +63,16 @@ export class logo {
     this.scene.add(micro);
 
     const sol = new Sol();
-    sol.name = "sol";
+    sol.name = 'sol';
     this.scene.add(sol);
 
     const table = new Table();
-    table.name = "table";
+    table.name = 'table';
     this.scene.add(table);
 
     const tube = new Tube();
     tube.position.set(5, 9, 0);
-    tube.name = "tube";
+    tube.name = 'tube';
     this.scene.add(tube);
 
     const tab = new Tableau();
@@ -74,7 +85,7 @@ export class logo {
     this.scene.add(blouserr);
 
     const lunette = new Lunette();
-    lunette.position.set(-8, 7,0);
+    lunette.position.set(-8, 7, 0);
     this.scene.add(lunette);
   }
 
@@ -87,9 +98,15 @@ export class logo {
   }
 
   removeEventListeners() {
-    document.removeEventListener('mousedown', this.onMouseDownHandler.bind(this));
+    document.removeEventListener(
+      'mousedown',
+      this.onMouseDownHandler.bind(this)
+    );
     document.removeEventListener('mouseup', this.onMouseUpHandler.bind(this));
-    document.removeEventListener('mousemove', this.onMouseMoveHandler.bind(this));
+    document.removeEventListener(
+      'mousemove',
+      this.onMouseMoveHandler.bind(this)
+    );
     document.removeEventListener('wheel', this.onWheelHandler.bind(this));
     document.removeEventListener('click', this.onMouseClick.bind(this));
   }
@@ -104,13 +121,12 @@ export class logo {
 
     const intersects = raycaster.intersectObjects(this.scene.children);
     if (intersects.length > 0) {
-      console.log("je susi la ")
+      console.log('je susi la ');
       const object = intersects[0].object;
-      console.log(object)
+      console.log(object);
       if (object.parent?.name === 'micro') {
         this.gotosceneatome();
       } else if (object.parent?.name === 'tableau') {
-
         this.gotoscenetableau();
       }
     }
@@ -121,11 +137,14 @@ export class logo {
     const targetPosition = micro.position.clone();
 
     new TWEEN.Tween(this.camera.position)
-      .to({
-        x: targetPosition.x - 4,
-        y: targetPosition.y + 5,
-        z: targetPosition.z,
-      }, 1000)
+      .to(
+        {
+          x: targetPosition.x - 4,
+          y: targetPosition.y + 5,
+          z: targetPosition.z,
+        },
+        1000
+      )
       .easing(TWEEN.Easing.Quadratic.Out)
       .onUpdate(() => {
         this.camera.lookAt(targetPosition);
@@ -155,11 +174,14 @@ export class logo {
     const targetPosition = micro.position.clone();
 
     new TWEEN.Tween(this.camera.position)
-      .to({
-        x: targetPosition.x,
-        y: targetPosition.y + 5,
-        z: targetPosition.z + 10,
-      }, 1000)
+      .to(
+        {
+          x: targetPosition.x,
+          y: targetPosition.y + 5,
+          z: targetPosition.z + 10,
+        },
+        1000
+      )
       .easing(TWEEN.Easing.Quadratic.Out)
       .onUpdate(() => {
         this.camera.lookAt(targetPosition);
