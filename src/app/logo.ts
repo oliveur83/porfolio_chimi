@@ -160,7 +160,7 @@ export class logo {
         const screenWidth = window.innerWidth;
         // Réinitialiser et repositionner la caméra pour la nouvelle scène
         this.createCamera();
-        this.camera.position.set(-15, 0, 10 + 50000 / screenWidth); // Ajustez ces coordonnées selon vos besoins
+        this.camera.position.set(-15, 0, 10 + 20000 / screenWidth); // Ajustez ces coordonnées selon vos besoins
         this.camera.lookAt(-15, 0, 0);
         console.log(screenWidth);
         // Re-ajouter les événements si nécessaire
