@@ -90,21 +90,27 @@ export class logo {
   }
 
   addEventListeners() {
-    document.addEventListener('mousedown', this.onMouseDownHandler.bind(this));
-    document.addEventListener('mouseup', this.onMouseUpHandler.bind(this));
-    document.addEventListener('mousemove', this.onMouseMoveHandler.bind(this));
+    document.addEventListener(
+      'pointerdown',
+      this.onMouseDownHandler.bind(this)
+    );
+    document.addEventListener('pointerup', this.onMouseUpHandler.bind(this));
+    document.addEventListener(
+      'pointermove',
+      this.onMouseMoveHandler.bind(this)
+    );
     document.addEventListener('wheel', this.onWheelHandler.bind(this));
     document.addEventListener('click', this.onMouseClick.bind(this));
   }
 
   removeEventListeners() {
     document.removeEventListener(
-      'mousedown',
+      'pointerdown',
       this.onMouseDownHandler.bind(this)
     );
-    document.removeEventListener('mouseup', this.onMouseUpHandler.bind(this));
+    document.removeEventListener('pointerup', this.onMouseUpHandler.bind(this));
     document.removeEventListener(
-      'mousemove',
+      'pointermove',
       this.onMouseMoveHandler.bind(this)
     );
     document.removeEventListener('wheel', this.onWheelHandler.bind(this));
