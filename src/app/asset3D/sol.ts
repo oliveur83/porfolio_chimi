@@ -10,7 +10,7 @@ export class Sol extends THREE.Group {
     //-----------creation sol ---------------------
     const tableTop = new THREE.Mesh(structure_rectangle, couleur_sol);
     tableTop.position.y = 1;
-    tableTop.name = 'toto2';
+    tableTop.name = 'micro';
     //-----------creation des deux mur  ---------------------
     const tableleft = new THREE.Mesh(structure_rectangle, couleur_mur);
     const tablelright = new THREE.Mesh(structure_rectangle, couleur_mur);

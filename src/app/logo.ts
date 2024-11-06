@@ -124,7 +124,7 @@ export class logo {
       console.log('je susi la ');
       const object = intersects[0].object;
       console.log(object);
-      if (object.parent?.name === 'micro') {
+      if (object.parent?.name === 'micro' || object.name === 'micro') {
         this.gotosceneatome();
       } else if (object.parent?.name === 'tableau') {
         this.gotoscenetableau();
@@ -157,12 +157,12 @@ export class logo {
         // Créer une nouvelle scène
         const nouvelleScene = creerSceneAtome();
         this.scene = nouvelleScene;
-
+        const screenWidth = window.innerWidth;
         // Réinitialiser et repositionner la caméra pour la nouvelle scène
         this.createCamera();
-        this.camera.position.set(-15, 0, 25); // Ajustez ces coordonnées selon vos besoins
+        this.camera.position.set(-15, 0, 10 + 50000 / screenWidth); // Ajustez ces coordonnées selon vos besoins
         this.camera.lookAt(-15, 0, 0);
-
+        console.log(screenWidth);
         // Re-ajouter les événements si nécessaire
         this.addEventListeners();
       })
