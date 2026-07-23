@@ -1,7 +1,6 @@
-import { Component,ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-
+import { Component, ElementRef, Inject } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -10,31 +9,28 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  
 })
 export class AppComponent {
   title = 'maryne_por';
-  constructor( private elementRef: ElementRef, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(
+    @Inject(ElementRef) private elementRef: ElementRef,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-  }
-  
   ngAfterViewInit() {
     const container = this.elementRef.nativeElement.querySelector('#container');
   }
-  profil(){
+  profil() {
     this.router.navigate(['profil']);
-
-  } 
-  competence(){
+  }
+  competence() {
     this.router.navigate(['competence']);
-
   }
-  parcours(){
+  parcours() {
     this.router.navigate(['parcours']);
-   
   }
-   home(){
+  home() {
     this.router.navigate(['Home']);
-
   }
 }
