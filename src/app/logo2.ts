@@ -21,10 +21,8 @@ export class logo {
     // 1. Scène & Caméra (Chaleureuse, low-poly style)
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xfcf8f2); // Fond crème doux
-
-    const width = this.container.clientWidth;
-    const height = this.container.clientHeight;
-
+    const width = this.container.clientWidth || window.innerWidth;
+    const height = this.container.clientHeight || 500; // Hauteur par défaut si le CSS charge mal
     // 2. Rendu (WebGLRenderer)
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.renderer.setSize(width, height);
@@ -34,7 +32,7 @@ export class logo {
     // 1. Un champ de vision réduit (fov) pour zoomer sans déformer
     this.camera = new THREE.PerspectiveCamera(
       25, // Un fov petit (ex: 25 au lieu de 50/75) donne cet effet "isometric/macro" avec du relief
-      window.innerWidth / window.innerHeight,
+      width / height,
       0.1,
       1000
     );
