@@ -20,25 +20,32 @@
       margin: 0; 
     }
   
-    h1{font-size: 70px;
-    z-index: 1000;}
-    #menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-    padding: 20px;
-    height: 10%;
-    font-size:50px
-  }
-  
-  #menu a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    position: relative;
-  }
+ /* --- Modifie le H1 --- */
+h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem); /* Varie intelligemment entre ~32px et 56px selon l'écran */
+  z-index: 1000;
+  text-align: center;
+}
+
+/* --- Modifie le Menu --- */
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 20px;
+  /* Retire height: 10% qui pose problème si le contenu déborde */
+  font-size: 1.2rem; /* (~19px) au lieu de 50px ! */
+}
+
+#menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  position: relative;
+  white-space: nowrap; /* Évite que les mots du menu coupent la ligne */
+}
   
   .ripple {
     position: absolute;
